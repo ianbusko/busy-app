@@ -6,7 +6,6 @@ import {
 import Home from './Home';
 import Stuff from './Stuff';
 import Contact from './Contact';
-import Header from './components/header.js';
 
 class Main extends Component {
   render() {
