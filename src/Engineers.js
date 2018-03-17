@@ -1,5 +1,18 @@
 import React, { Component } from "react";
+import styles from './Engineers.css.js';
 import { getEngineers } from './api/engineersApi';
+
+const getStatusIndicator = (depth) => {
+  let depthClass = ``;
+  if(depth >= 4){
+    depthClass = `red`;
+  } else if (depth > 1){
+    depthClass = `yellow`;
+  } else {
+    depthClass = `green`;
+  }
+  return `bg-${depthClass}`;
+}
 
 class Engineers extends Component {
   constructor (props){
@@ -19,7 +32,7 @@ class Engineers extends Component {
 
   render() {
     const { users } = this.state;
-    console.log(users);
+
     return (
       <article className='mw5 mw7-ns center bg-white pa3 ph5-ns sans-serif'>
         <header>
@@ -39,12 +52,14 @@ class Engineers extends Component {
           {users.map((user, index) => {
             return(
               <tr className="stripe-dark">
-                <td className="pa3">Hassan Johnson</td>
+                <td className="pa3">
+                  <span className={ getStatusIndicator(user.depth) } style={styles.indicator}></span>
+                </td>
                 <td className="pa3">{user.name}</td>
                 <td className="pa3">{user.email}</td>
               </tr>
             )
-          })}
+          }, this)}
           </tbody>
         </table>
 
