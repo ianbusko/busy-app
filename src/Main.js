@@ -12,16 +12,13 @@ import Header from "./components/header.js";
 class Main extends Component {
   render() {
     return (
-      <HashRouter>
-        <div>
-          <Header />
+      <main>
           <div className="content">
             <Route exact path="/" component={Home}/>
             <Route path="/stuff" component={Stuff}/>
             <Route path="/contact" component={Contact}/>
           </div>
-        </div>
-      </HashRouter>
+      </main>
     );
   }
 }
