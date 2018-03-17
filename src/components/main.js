@@ -3,18 +3,14 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import Home from '../Home';
-import Stuff from '../Stuff';
-import Contact from '../Contact';
+import Engineers from '../Engineers';
 
 class Main extends Component {
   render() {
     return (
       <main>
         <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route path='/stuff' component={Stuff}/>
-          <Route path='/contact' component={Contact}/>
+          <Route exact path='/' component={Engineers}/>
         </Switch>
       </main>
     );
