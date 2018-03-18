@@ -2,6 +2,22 @@
   "name": "busy-app",
   "version": "0.1.0",
   "private": true,
+  "author": "Ian Busko <ian.busko@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ianbusko/busy-app/issues"
+  },
+  "homepage": "https://github.com/ianbusko/busy-app#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ianbusko/busy-app"
+  },
+  "keywords": [
+    "javascript",
+    "mock",
+    "React",
+    "Tachyons"
+  ],
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
