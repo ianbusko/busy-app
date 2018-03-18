@@ -57,7 +57,7 @@ class Engineers extends Component {
                   <span className={ getStatusIndicator(user.depth) } style={styles.indicator}></span>
                 </td>
                 <td className="pa3">
-                  <Link className='link dark-blue underline-hover' to='/Engineer'>{user.name}</Link>
+                  <Link className='link dark-blue underline-hover' to={`Engineer/${user.id}`}>{user.name}</Link>
                 </td>
                 <td className="pa3">{user.email}</td>
               </tr>
