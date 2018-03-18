@@ -4,15 +4,13 @@ import { getEngineers } from './api/engineersApi';
 import { Link } from 'react-router-dom';
 
 const getStatusIndicator = (depth) => {
-  let depthClass = ``;
   if(depth >= 4){
-    depthClass = `red`;
+    return `red`;
   } else if (depth > 1){
-    depthClass = `yellow`;
+    return `yellow`;
   } else {
-    depthClass = `green`;
+    return `green`;
   }
-  return `bg-${depthClass}`;
 }
 
 class Engineers extends Component {
