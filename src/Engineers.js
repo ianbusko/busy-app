@@ -1,6 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import styles from './Engineers.css.js';
 import { getEngineers } from './api/engineersApi';
+import { Link } from 'react-router-dom';
 
 const getStatusIndicator = (depth) => {
   let depthClass = ``;
@@ -55,7 +56,9 @@ class Engineers extends Component {
                 <td className="pa3">
                   <span className={ getStatusIndicator(user.depth) } style={styles.indicator}></span>
                 </td>
-                <td className="pa3">{user.name}</td>
+                <td className="pa3">
+                  <Link className='link dark-blue underline-hover' to='/Engineer'>{user.name}</Link>
+                </td>
                 <td className="pa3">{user.email}</td>
               </tr>
             )

@@ -4,6 +4,7 @@ import {
   Switch
 } from 'react-router-dom';
 import Engineers from '../Engineers';
+import Engineer from '../Engineer';
 
 class Main extends Component {
   render() {
@@ -11,6 +12,7 @@ class Main extends Component {
       <main>
         <Switch>
           <Route exact path='/' component={Engineers}/>
+          <Route exact path='/Engineer' component={Engineer}/>
         </Switch>
       </main>
     );
