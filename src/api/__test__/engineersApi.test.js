@@ -1,6 +1,7 @@
 /* eslint-env jest */
 
-const engineersApi = require('../engineersApi');
+const engineersApi = require('../engineersApi')
+jest.mock('../request')
 
 // Test GetEngineer
 describe('#getEngineers() using promises', () => {
