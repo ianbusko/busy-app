@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './EngineersTableRow.css.js';
+import styles from './engineers-table-row.css.js';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 

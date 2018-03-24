@@ -1,5 +1,5 @@
 import React from 'react';
-import EngineersTableRow from './EngineersTableRow'
+import EngineersTableRow from './engineers-table-row'
 
 export default function EngineersTable({ engineers }){
 

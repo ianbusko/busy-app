@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { fetchEngineers } from '../actions/engineer-actions';
 import { connect } from 'react-redux';
-import EngineersTable from '../components/EngineersTable';
+import EngineersTable from '../components/engineers-table';
 
 class EngineersPage extends Component {
 
