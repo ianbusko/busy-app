@@ -3,7 +3,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import Engineers from '../Engineers';
+import EngineersPage from '../pages/EngineersPage';
 import Engineer from '../Engineer';
 
 class Main extends Component {
@@ -11,7 +11,7 @@ class Main extends Component {
     return (
       <main>
         <Switch>
-          <Route exact path='/' component={Engineers}/>
+          <Route exact path='/' component={EngineersPage}/>
           <Route exact path='/Engineer/:engineerId' component={Engineer}/>
         </Switch>
       </main>
