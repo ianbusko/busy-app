@@ -16,7 +16,7 @@ export default function EngineersTable({ engineers }){
   }
 
   const engineerRows = () => {
-    return engineers.map( engineer => {
+    return engineers.map(engineer => {
       return(
         <tr className="stripe-dark">
           <td className="pa3">

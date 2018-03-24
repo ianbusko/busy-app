@@ -1,6 +1,5 @@
 const defaultState = {
-  contacts: [],
-  contact: {name:{}},
+  engineers: [],
   loading: false,
   errors: {}
 }
@@ -10,7 +9,7 @@ export default (state=defaultState, action={}) => {
     case 'FETCH_ENGINEERS': {
       return {
         ...state,
-        contacts: action.payload
+        engineers: action.payload
       }
     }
 

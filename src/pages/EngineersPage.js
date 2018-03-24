@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { fetchEngineers } from '../actions/engineer-actions';
 import { connect } from 'react-redux';
-
 import EngineersTable from '../components/EngineersTable';
 
 class EngineersPage extends Component {
@@ -25,7 +24,6 @@ class EngineersPage extends Component {
   }
 }
 
-// Make contacts  array available in  props
 function mapStateToProps(state) {
   return {
       engineers : state.engineerStore.engineers
