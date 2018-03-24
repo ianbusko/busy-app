@@ -1,18 +1,8 @@
 import React, { Component } from 'react';
-import styles from './EngineersPage.css.js';
 import { fetchEngineers } from '../actions/engineer-actions';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const getStatusIndicator = (depth) => {
-  if(depth >= 4){
-    return `red`;
-  } else if (depth > 1){
-    return `yellow`;
-  } else {
-    return `green`;
-  }
-}
+import EngineersTable from '../components/EngineersTable';
 
 class EngineersPage extends Component {
 
@@ -29,6 +19,7 @@ class EngineersPage extends Component {
         </header>
         <p className='lh-copy'>Select an engineer below to see how busy he or she is. Please don't bother busy engineers.</p>
 
+        <EngineersTable engineers={this.props.engineers} />
       </article>
     );
   }
