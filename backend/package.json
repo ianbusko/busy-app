@@ -1,0 +1,35 @@
+{
+  "name": "busy-app-mock-api",
+  "version": "1.0.0",
+  "description": "A mock API for the busy App.",
+  "main": "index.js",
+  "scripts": {
+    "generate-mock-data": "node buildScripts/generateMockData",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001"
+  },
+  "author": "Ian Busko <ian.busko@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "json-server": "^0.12.1"
+  },
+  "dependencies": {
+    "faker": "^4.1.0",
+    "json-schema-faker": "^0.5.0-rc13"
+  },
+  "bugs": {
+    "url": "https://github.com/ianbusko/busy-app-mock-api/issues"
+  },
+  "homepage": "https://github.com/ianbusko/busy-app-mock-api#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ianbusko/busy-app-mock-api"
+  },
+  "keywords": [
+    "javascript",
+    "mock",
+    "API",
+    "json",
+    "server"
+  ]
+}
