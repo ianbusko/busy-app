@@ -17,20 +17,20 @@ class Engineers extends Component {
   constructor (props){
     super(props);
     this.state = {
-      users : [],
+      engineers : [],
       loaded: false
     }
   }
 
   componentDidMount(){
     getEngineers().then(data =>{
-      this.setState({ users: data.entity, loaded: true });
+      this.setState({ engineers: data.entity, loaded: true });
       console.log(data.entity);
     });
   }
 
   render() {
-    const { users } = this.state;
+    const { engineers } = this.state;
 
     return (
       <article className='mw5 mw7-ns center bg-white pa3 ph5-ns sans-serif'>
@@ -48,7 +48,7 @@ class Engineers extends Component {
             </tr>
           </thead>
           <tbody className="lh-copy">
-          {users.map((user, index) => {
+          { engineers.map((user, index) => {
             return(
               <tr className="stripe-dark">
                 <td className="pa3">
