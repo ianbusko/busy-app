@@ -1,32 +1,12 @@
 import React from 'react';
-import styles from './EngineersTable.css.js';
-import { Link } from 'react-router-dom';
-
+import EngineersTableRow from './EngineersTableRow'
 
 export default function EngineersTable({ engineers }){
-
-  const getStatusIndicator = (depth) => {
-    if(depth >= 4){
-      return `red`;
-    } else if (depth > 1){
-      return `yellow`;
-    } else {
-      return `green`;
-    }
-  }
 
   const engineerRows = () => {
     return engineers.map(engineer => {
       return(
-        <tr className="stripe-dark">
-          <td className="pa3">
-            <span className={ getStatusIndicator(engineer.depth) } style={styles.indicator}></span>
-          </td>
-          <td className="pa3">
-            <Link className='link dark-blue underline-hover' to={`Engineer/${engineer.id}`}>{engineer.name}</Link>
-          </td>
-          <td className="pa3">{engineer.email}</td>
-        </tr>
+        <EngineersTableRow engineer={engineer} />
       )
     })
   }
