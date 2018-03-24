@@ -10,6 +10,9 @@ node_modules/
 # production
 /build
 
+# Mock API Data
+backend/src/api/db.json
+
 # misc
 .DS_Store
 .env.local
