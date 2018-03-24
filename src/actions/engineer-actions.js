@@ -2,10 +2,10 @@ import { client } from './';
 
 const url = '/engineers';
 
-export function fetchContacts(){
+export function fetchEngineers(){
   return dispatch => {
     dispatch({
-      type: 'FETCH_CONTACTS',
+      type: 'FETCH_ENGINEERS',
       payload: client.get(url)
     })
   }

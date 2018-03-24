@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import EngineerReducer from './engineer-reducer';
 
 const reducers = {
-  contactStore: ContactReducer,
+  engineerStore: EngineerReducer,
 }
 
 const rootReducer = combineReducers(reducers);
