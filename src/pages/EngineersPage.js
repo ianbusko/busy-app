@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './Engineers.css.js';
+import styles from './EngineersPage.css.js';
 import { fetchEngineers } from '../actions/engineer-actions';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
