@@ -21,7 +21,7 @@ export default function ContactCard({engineer}) {
         <span className={ getStatusIndicator(engineer.depth) } style={styles.indicator}></span>
       </td>
       <td className="pa3">
-        <Link className='link dark-blue underline-hover' to={`Engineer/${engineer.id}`}>{engineer.name}</Link>
+        <Link className='link dark-blue underline-hover' to={`engineer/edit/${engineer.id}`}>{engineer.name}</Link>
       </td>
       <td className="pa3">{engineer.email}</td>
     </tr>
