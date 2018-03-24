@@ -13,6 +13,13 @@ export default (state=defaultState, action={}) => {
       }
     }
 
+    case "FETCH_ENGINEERS_FULFILLED": {
+      return {
+        ...state,
+        engineers: action.payload.data.data || action.payload.data // in case pagination is disabled
+      }
+    }
+
     default:
       return state;
   }

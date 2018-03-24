@@ -6,6 +6,7 @@ import EngineersTable from '../components/EngineersTable';
 class EngineersPage extends Component {
 
   componentDidMount(){
+    console.log('fetching...');
     this.props.fetchEngineers();
   }
 
