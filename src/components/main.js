@@ -3,7 +3,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import EngineersPage from '../pages/EngineersPage';
+import EngineersPage from '../pages/engineers-page';
 import Engineer from '../Engineer';
 
 class Main extends Component {
