@@ -31,17 +31,15 @@ class EngineerFormPage extends Component {
           <h1 className='mt0'>Selected Engineer</h1>
         </header>
         <p className='lh-copy'>Please edit your engineer's information below. </p>
-        <EngineerForm />
+        <EngineerForm engineer={ this.props.engineer } />
       </article>
     );
   }
 }
 
-
-
 function mapStateToProps(state) {
   return {
-      engineers : state.engineerStore.engineers
+      engineer : state.engineerStore.engineer
   }
 }
 
