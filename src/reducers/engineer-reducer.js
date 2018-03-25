@@ -38,6 +38,69 @@ export default (state=defaultState, action={}) => {
       }
     }
 
+    case 'NEW_ENGINEER': {
+      return {
+        ...state,
+        engineer: {name: '', email: '', depth: 1}
+      }
+    }
+
+    case 'SAVE_ENGINEER_PENDING': {
+      return {
+        ...state,
+        loading: true
+      }
+    }
+
+    case 'SAVE_ENGINEER_FULFILLED': {
+      return {
+        ...state,
+        engineers: [...state.engineers, action.payload.data],
+        errors: {},
+        loading: false
+      }
+    }
+
+    case 'SAVE_ENGINEER_REJECTED': {
+      const data = action.payload.response.data;
+      // convert feathers error formatting to match client-side error formatting
+      const { name, email, depth } = data.errors;
+      const errors = { global: data.message, name, email, depth };
+      return {
+        ...state,
+        errors: errors,
+        loading: false
+      }
+    }
+
+    case 'UPDATE_ENGINEER_PENDING': {
+      return {
+        ...state,
+        loading: true
+      }
+    }
+
+    case 'UPDATE_ENGINEER_FULFILLED': {
+      const engineer = action.payload.data;
+      return {
+        ...state,
+        engineers: state.engineers.map(item => item._id === engineer._id ? engineer : item),
+        errors: {},
+        loading: false
+      }
+    }
+
+    case 'UPDATE_ENGINEER_REJECTED': {
+      const data = action.payload.response.data;
+      const { name, email, depth } = data.errors;
+      const errors = { global: data.message, name, email, depth };
+      return {
+        ...state,
+        errors: errors,
+        loading: false
+      }
+    }
+
     default:
       return state;
   }
