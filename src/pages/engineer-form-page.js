@@ -31,7 +31,7 @@ class EngineerFormPage extends Component {
           <h1 className='mt0'>Selected Engineer</h1>
         </header>
         <p className='lh-copy'>Please edit your engineer's information below. </p>
-        <EngineerForm engineer={ this.props.engineer } />
+        <EngineerForm engineer={this.props.engineer} />
       </article>
     );
   }
