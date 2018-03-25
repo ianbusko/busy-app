@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, formValueSelector } from 'redux-form';
+import { connect } from 'react-redux';
 
 class EngineerForm extends Component {
 
@@ -44,7 +45,7 @@ class EngineerForm extends Component {
         <div className="measure">
           <label className="f6 b db mb2">Stack Depth</label>
           <div class="mb2">
-            <Field name="favoriteColor" component="select">
+            <Field name="depth" component="select">
               <option></option>
               <option value="1">Not too deep</option>
               <option value="2">A little deep</option>
@@ -61,5 +62,25 @@ class EngineerForm extends Component {
     );
   }
 }
+
+// EngineerForm = reduxForm({
+//   form: 'engineerForm'  // a unique identifier for this form
+// })(EngineerForm)
+//
+// const selector = formValueSelector('engineerForm') // <-- same as form name
+// EngineerForm = connect(
+//   state => {
+//     // can select values individually
+//     const name = selector(state, 'name')
+//     const email = selector(state, 'email')
+//     const depth = selector(state, 'depth')
+//     // or together as a group
+//     return {
+//       name,
+//       email,
+//       depth
+//     }
+//   }
+// )(EngineerForm)
 
 export default reduxForm({form: 'engineer'})(EngineerForm);
