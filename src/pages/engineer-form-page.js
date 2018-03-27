@@ -4,8 +4,6 @@ import { SubmissionError } from 'redux-form';
 import { connect } from 'react-redux';
 import { fetchEngineer } from '../actions/engineer-actions';
 import EngineerForm from '../components/engineer-form';
-// import ContactForm from '../components/contact-form';
-
 
 class EngineerFormPage extends Component {
 

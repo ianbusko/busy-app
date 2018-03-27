@@ -3,7 +3,7 @@ import styles from './engineers-table-row.css.js';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 
-export default function ContactCard({engineer}) {
+export default function EngineerTableRow({engineer}) {
 
   const getStatusIndicator = (depth) => {
     if(depth >= 4){
@@ -28,6 +28,6 @@ export default function ContactCard({engineer}) {
   )
 }
 
-ContactCard.propTypes = {
+EngineerTableRow.propTypes = {
   engineer: PropTypes.object.isRequired
 }
