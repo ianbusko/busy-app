@@ -36,15 +36,27 @@ class EngineerForm extends Component {
   )
 
   render(){
+    console.log('props', this.props);
     const { handleSubmit, pristine, submitting, loading } = this.props;
 
     return (
-      <form onSubmit={ handleSubmit } loading={ loading }className="pa4 black-80">
-        <Field name="name" type="text" component={this.renderField} label="Name"/>
-        <Field name="email" type="text" component={this.renderField} label="Email Address"/>
+      <form
+        onSubmit={ handleSubmit }
+        loading={ loading }
+        className="pa4 black-80">
+        <Field
+          name="name"
+          type="text"
+          component={this.renderField}
+          label="Name"/>
+        <Field
+          name="email"
+          type="text"
+          component={this.renderField}
+          label="Email Address"/>
         <div className="measure">
           <label className="f6 b db mb2">Stack Depth</label>
-          <div class="mb2">
+          <div className="mb2">
             <Field name="depth" component="select">
               <option></option>
               <option value="1">Not too deep</option>
@@ -56,31 +68,14 @@ class EngineerForm extends Component {
           </div>
         </div>
         <div className="measure">
-          <button className="f6 link dim ph3 pv2 mb2 dib white bg-dark-blue" type="submit" disabled={pristine || submitting}>Submit</button>
+          <button
+            className="f6 link dim ph3 pv2 mb2 dib white bg-dark-blue"
+            type="submit"
+            disabled={pristine || submitting}>Submit</button>
         </div>
       </form>
     );
   }
 }
-
-// EngineerForm = reduxForm({
-//   form: 'engineerForm'  // a unique identifier for this form
-// })(EngineerForm)
-//
-// const selector = formValueSelector('engineerForm') // <-- same as form name
-// EngineerForm = connect(
-//   state => {
-//     // can select values individually
-//     const name = selector(state, 'name')
-//     const email = selector(state, 'email')
-//     const depth = selector(state, 'depth')
-//     // or together as a group
-//     return {
-//       name,
-//       email,
-//       depth
-//     }
-//   }
-// )(EngineerForm)
 
 export default reduxForm({form: 'engineer'})(EngineerForm);
