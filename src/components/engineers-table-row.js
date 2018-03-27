@@ -7,11 +7,11 @@ export default function ContactCard({engineer}) {
 
   const getStatusIndicator = (depth) => {
     if(depth >= 4){
-      return `red`;
+      return `bg-red`;
     } else if (depth > 1){
-      return `yellow`;
+      return `bg-yellow`;
     } else {
-      return `green`;
+      return `bg-green`;
     }
   }
 
