@@ -6,7 +6,7 @@ class EngineerForm extends Component {
 
   componentWillReceiveProps = (nextProps) => {
     const { engineer } = nextProps;
-    if(engineer._id !== this.props.engineer._id) {
+    if(engineer.id !== this.props.engineer.id) {
       this.props.initialize(engineer)
     }
   }
