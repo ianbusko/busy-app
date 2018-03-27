@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { Redirect } from 'react-router';
-// import { SubmissionError } from 'redux-form';
+import { SubmissionError } from 'redux-form';
 import { connect } from 'react-redux';
 import { fetchEngineer } from '../actions/engineer-actions';
 import EngineerForm from '../components/engineer-form';
@@ -22,6 +22,21 @@ class EngineerFormPage extends Component {
     }
   }
 
+  submit = (engineer) => {
+    if(!engineer._id) {
+      return this.props.saveEngineer(engineer)
+        .then(response => this.setState({ redirect:true }))
+        .catch(err => {
+           throw new SubmissionError(this.props.errors)
+         })
+    } else {
+      return this.props.updateEngineer(engineer)
+        .then(response => this.setState({ redirect:true }))
+        .catch(err => {
+           throw new SubmissionError(this.props.errors)
+         })
+    }
+  }
 
   render() {
 
@@ -31,7 +46,7 @@ class EngineerFormPage extends Component {
           <h1 className='mt0'>Selected Engineer</h1>
         </header>
         <p className='lh-copy'>Please edit your engineer's information below. </p>
-        <EngineerForm engineer={this.props.engineer} />
+        <EngineerForm engineer={this.props.engineer} onSubmit={this.submit}/>
       </article>
     );
   }
