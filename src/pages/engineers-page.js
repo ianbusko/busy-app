@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { fetchEngineers } from '../actions/engineer-actions';
 import { connect } from 'react-redux';
 import EngineersTable from '../components/engineers-table';
+import { Link } from 'react-router-dom';
 
 class EngineersPage extends Component {
 
@@ -19,6 +20,7 @@ class EngineersPage extends Component {
         <p className='lh-copy'>Select an engineer below to see how busy he or she is. Please don't bother busy engineers.</p>
 
         <EngineersTable engineers={this.props.engineers} />
+        <Link className='link dark-blue underline-hover' to={`engineer/new`}>New Engineer</Link>
       </article>
     );
   }
