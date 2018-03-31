@@ -12,6 +12,7 @@ class Main extends Component {
       <main>
         <Switch>
           <Route exact path='/' component={EngineersPage}/>
+          <Route path="/engineer/new" component={EngineerFormPage}/>
           <Route path="/engineer/edit/:_id" component={EngineerFormPage}/>
         </Switch>
       </main>
