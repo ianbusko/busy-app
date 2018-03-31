@@ -41,6 +41,8 @@ class EngineerFormPage extends Component {
   render() {
 
     return (
+      this.state.redirect ?
+      <Redirect to="/" /> :
       <article className='mw5 mw7-ns center bg-white pa3 ph5-ns sans-serif'>
         <header>
           <h1 className='mt0'>Selected Engineer</h1>
