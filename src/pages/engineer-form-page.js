@@ -39,7 +39,6 @@ class EngineerFormPage extends Component {
   }
 
   render() {
-
     return (
       this.state.redirect ?
       <Redirect to="/" /> :
