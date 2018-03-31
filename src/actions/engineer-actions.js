@@ -42,7 +42,7 @@ export function updateEngineer(engineer) {
   return dispatch => {
     return dispatch({
       type: 'UPDATE_ENGINEER',
-      payload: client.put(`${url}/${engineer._id}`, engineer)
+      payload: client.put(`${url}/${engineer.id}`, engineer)
     })
   }
 }

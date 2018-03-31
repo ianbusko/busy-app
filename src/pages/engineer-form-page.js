@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import { Redirect } from 'react-router';
 import { SubmissionError } from 'redux-form';
 import { connect } from 'react-redux';
-import { fetchEngineer } from '../actions/engineer-actions';
+import { fetchEngineer, saveEngineer, updateEngineer } from '../actions/engineer-actions';
 import EngineerForm from '../components/engineer-form';
 
 class EngineerFormPage extends Component {
@@ -17,13 +17,15 @@ class EngineerFormPage extends Component {
       this.props.fetchEngineer(_id)
     } else {
       // this.props.newContact();
-    }
+    }  
   }
 
   submit = (engineer) => {
-    if(!engineer._id) {
+    if(!engineer.id) {
       return this.props.saveEngineer(engineer)
-        .then(response => this.setState({ redirect:true }))
+        .then(response => {
+          this.setState({ redirect:true })
+        })
         .catch(err => {
            throw new SubmissionError(this.props.errors)
          })
@@ -31,8 +33,8 @@ class EngineerFormPage extends Component {
       return this.props.updateEngineer(engineer)
         .then(response => this.setState({ redirect:true }))
         .catch(err => {
-           throw new SubmissionError(this.props.errors)
-         })
+          throw new SubmissionError(this.props.errors)
+        })
     }
   }
 
@@ -56,4 +58,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { fetchEngineer })(EngineerFormPage);
+export default connect(mapStateToProps, { fetchEngineer, saveEngineer, updateEngineer })(EngineerFormPage);
